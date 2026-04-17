@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Host a Hive | Buzz and Blooms</title>
+<meta name="description" content="A managed beehive on your land. We do the work. Your garden thrives. Your neighborhood eats well. Learn how hosting works with Buzz and Blooms in Chattanooga.">
+<meta property="og:title" content="Host a Hive — Buzz and Blooms">
+<meta property="og:description" content="A managed beehive on your land. We do the work. Your garden thrives. Your neighborhood eats well.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buzzandbloomschatt.com/host-a-hive.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+  /* Host-a-Hive specific styles */
+  .pullquote {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 1.55rem);
+    line-height: 1.4;
+    color: var(--sage-deep);
+    padding: 2rem 1.8rem 2rem 2.2rem;
+    margin: 2.5rem 0;
+    border-left: 3px solid var(--honey);
+    background: rgba(255, 253, 247, 0.5);
+    backdrop-filter: blur(4px);
+  }
+  .pullquote-attribution {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--honey-deep);
+    margin-top: 1rem;
+  }
+
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    margin: 1.5rem 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 1rem 0 1rem 3.2rem;
+    position: relative;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(212, 148, 10, 0.15), rgba(212, 148, 10, 0.08));
+    color: var(--honey-deep);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li strong {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+  }
+  .steps li span {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    display: block;
+  }
+
+  .community {
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+    color: var(--cream);
+    padding: 2.2rem 2rem;
+    margin: 3rem 0;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .community::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0 L30 8.66 L30 25.98 L15 34.64 L0 25.98 L0 8.66Z' fill='none' stroke='%23F5D280' stroke-width='1'/%3E%3Cpath d='M45 0 L60 8.66 L60 25.98 L45 34.64 L30 25.98 L30 8.66Z' fill='none' stroke='%23F5D280' stroke-width='1'/%3E%3Cpath d='M30 17.32 L45 25.98 L45 43.3 L30 51.96 L15 43.3 L15 25.98Z' fill='none' stroke='%23F5D280' stroke-width='1'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .community h3 {
+    color: var(--honey-light);
+    margin-bottom: 0.9rem;
+    position: relative;
+  }
+  .community p {
+    font-family: 'Crimson Pro', serif;
+    color: var(--cream);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    max-width: none;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  /* Final CTA block - prominent route to Get Started */
+  .final-cta {
+    background: rgba(255, 253, 247, 0.7);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 2.4rem 1.8rem;
+    margin: 3rem 0 1rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+  .final-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 3px;
+    background: var(--honey);
+    border-radius: 0 0 4px 4px;
+  }
+  .final-cta h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.65rem;
+  }
+  .final-cta p {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--honey-deep);
+    margin: 0 auto 1.6rem;
+    max-width: 28rem;
+  }
+  .final-cta-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .more-link-block {
+    text-align: center;
+    margin: 1.5rem 0 2rem;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--sage-deep);
+  }
+  .more-link-block a {
+    color: var(--honey-deep);
+    font-weight: 600;
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--honey-light);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+  }
+  .more-link-block a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+</style>
+
+</head>
+<body>
+
+<!-- Preview banner (REMOVE for production launch) -->
+<div class="preview-banner">
+  <span>Preview · Not yet live</span>
+</div>
+
+<div class="accent-bar"></div>
+
+<!-- Link bar (shared across pages) -->
+<div class="link-bar">
+  <div class="link-bar-inner">
+    <a href="https://www.npcseeds.org/seeds/0ba0ef82-71f8-458d-8ea9-48633b9c30ae" target="_blank" rel="noopener" aria-label="National Park City Seed">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" xmlns="http://www.w3.org/2000/svg"><path d="M8 14 Q8 8 4 4 Q8 5 12 4 Q8 8 8 14Z"/><line x1="8" y1="14" x2="8" y2="9"/></svg>
+      <span>NPC Seed</span>
+    </a>
+    <span class="link-sep">·</span>
+    <a href="https://www.instagram.com/buzzandbloomschatt/" target="_blank" rel="noopener" aria-label="Buzz and Blooms on Instagram">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="13" height="13" rx="3.5"/><circle cx="8" cy="8" r="3.2"/><circle cx="12" cy="4" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Buzz &amp; Blooms IG</span>
+    </a>
+    <span class="link-sep">·</span>
+    <a href="https://www.instagram.com/noogahoneypot/" target="_blank" rel="noopener" aria-label="Nooga Honey Pot on Instagram">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="13" height="13" rx="3.5"/><circle cx="8" cy="8" r="3.2"/><circle cx="12" cy="4" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Nooga Honey Pot IG</span>
+    </a>
+    <span class="link-sep">·</span>
+    <a href="https://www.youtube.com/@noogahoneypot" target="_blank" rel="noopener" aria-label="Nooga Honey Pot on YouTube">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="14" height="10" rx="3"/><polygon points="6.5,5.5 11,8 6.5,10.5" fill="currentColor" stroke="none"/></svg>
+      <span>Carmen on YouTube</span>
+    </a>
+  </div>
+</div>
+
+<!-- Flying bees -->
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+<div class="bee" aria-hidden="true"><svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><ellipse cx="13" cy="11" rx="6.5" ry="4.5" fill="#D4940A" opacity="0.85"/><line x1="9.5" y1="7" x2="9.5" y2="15" stroke="#2A2118" stroke-width="1" opacity="0.45"/><line x1="13" y1="6.5" x2="13" y2="15.5" stroke="#2A2118" stroke-width="1" opacity="0.45"/><circle cx="6" cy="11" r="2.8" fill="#2A2118" opacity="0.5"/><ellipse cx="10" cy="5.5" rx="4.5" ry="2.8" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.4" transform="rotate(-15, 10, 5.5)"/><ellipse cx="14" cy="5" rx="4" ry="2.5" fill="none" stroke="#D4940A" stroke-width="0.6" opacity="0.3" transform="rotate(-20, 14, 5)"/></svg></div>
+
+<main class="page">
+
+  <a href="index.html" class="back">Buzz and Blooms</a>
+
+  <section class="hero">
+    <div class="eyebrow">Host a Hive</div>
+    <h1>A managed beehive on your land.</h1>
+    <p class="lede">We do the work. Your garden thrives. Your neighborhood eats well.</p>
+  </section>
+
+  <p class="large">
+    Every spring in Chattanooga, feral honeybee colonies swarm looking for a new home. We rehome them. Carmen Joyce, Master Beekeeper, has spent years doing exactly this work, and she manages dozens of hives across Hamilton County.
+  </p>
+
+  <p class="large">
+    If you have a garden, a fruit tree, a vegetable bed, a farm, a church, or acreage, and you've ever thought about having bees, this is for you. You don't have to become a beekeeper. That's our job.
+  </p>
+
+  <p class="large">
+    More bees on your land means better pollination. Better pollination means more fruit on the fruit trees, more vegetables from the garden, more food coming off the property and into the neighborhood. That's the point.
+  </p>
+
+  <div class="pullquote">
+    One of our partner farms in Alton Park added two of Carmen's hives in 2024. The season before the bees arrived, they grew a few hundred pounds of produce. The first season with the bees, they grew nearly twenty times that. The next season, even more.
+    <span class="pullquote-attribution">Proof of what a managed hive can do.</span>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What you get</h2>
+
+  <ul class="gets">
+    <li>A healthy, rehomed feral honeybee colony, adapted to Chattanooga</li>
+    <li>Full hive installation by Carmen Joyce, Master Beekeeper</li>
+    <li>Regular inspections and maintenance through the season, typically bi-weekly when active</li>
+    <li>A swarm trap on the property where site conditions allow, to catch any natural splits from the hive</li>
+    <li>Tennessee Department of Agriculture registration, which we coordinate</li>
+    <li>Sting and safety education for the people who'll be near the hive, including kids</li>
+    <li>Honey at harvest, yours to keep</li>
+    <li>Winter preparation so the colony has the best shot at coming back strong next spring</li>
+  </ul>
+
+  <hr class="rule">
+
+  <h2 id="faqs">Questions we hear a lot</h2>
+
+  <div class="faq-accordion">
+
+    <details class="faq-item">
+      <summary>What about stings? I have kids.</summary>
+      <div class="faq-body">
+        <p>
+          A fair worry, and one we take head-on before any bees arrive. Carmen walks the site with the people who'll be around the hive, including kids, and explains how to move near a managed colony without triggering defensive behavior. Honeybees at a well-managed hive are generally calm and focused on foraging, not on people. Most stings people blame on bees actually come from yellow jackets or hornets, which are different insects with different temperaments.
+        </p>
+        <p>
+          The reality most hosts settle into is that the bees become part of the landscape. People garden next to them, mow near them, play near them. Kids who learn the difference between a honeybee and a wasp, and learn to move calmly near the hive, rarely have incidents.
+        </p>
+        <a href="education.html" class="faq-body-link">More on what hosting looks like</a>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Will bees on my land cause swarms in my neighbors' walls?</summary>
+      <div class="faq-body">
+        <p>
+          Honeybees naturally want to split and find new homes, especially in spring. We plan for this. At each site, where conditions allow, we install a <strong>swarm trap</strong> near the hive. If the colony splits, the trap catches the new swarm before it wanders. Carmen collects it and rehomes it. A hosted hive actually makes your neighborhood <em>less</em> likely to see problem swarms, not more, because we're actively managing the split risk instead of hoping it doesn't happen.
+        </p>
+        <p>
+          This is already what Carmen does across Hamilton County when someone calls about a swarm on their porch or in a wall. A hosted hive with a swarm trap turns your property into part of the solution.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Are these bees aggressive?</summary>
+      <div class="faq-body">
+        <p>
+          No. Tennessee is well north of the range where Africanized honeybees have established, so that's not a concern here. Our colonies are locally-adapted European honeybees that Carmen rehomes from swarms across Hamilton County. She evaluates each colony's temperament before installing it at a host site, and if a colony ever turns hot, she requeens it with a gentler queen. That's a standard beekeeping remedy, and we use it when we need to.
+        </p>
+        <p>
+          Temperament varies between colonies, which is why we take the time to match the right colony with the right site. A home with young children gets a different match than a remote farm, and both get bees that have been observed and assessed first.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Won't honeybees hurt native bees?</summary>
+      <div class="faq-body">
+        <p>
+          A real question, and one we take seriously. The research on competition between honeybees and native bees points to resource-scarce wildlands as the main area of concern, not the resource-rich gardens and small farms where we place our hives. We don't import bees from out of state. We aim to plant Tennessee natives like coneflower, beebalm, and mountain mint at our sites, which research suggests can help offset competitive effects and support ground-nesting and specialist bees alongside the managed hive.
+        </p>
+        <p>
+          We also ask every host to commit to a no-pesticide practice. Pesticide use and habitat loss are the top drivers of native bee decline nationally, and a garden that's genuinely chemical-free is the single most meaningful thing a landowner can offer any pollinator, honeybee or otherwise.
+        </p>
+        <a href="education.html" class="faq-body-link">Go deeper on native bees and pollinators</a>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How much space do I actually need?</summary>
+      <div class="faq-body">
+        <p>
+          Less than most people think. The hive itself takes up about two square feet, roughly the footprint of a large planter. What matters more than total yard size is the quality of the spot: at least six hours of direct sun, a reliable water source within 50 feet (or space to install one), and a flyway barrier near the entrance like a fence, hedge, or building wall that forces the bees to fly up and over, not out at face level.
+        </p>
+        <p>
+          A typical residential backyard can comfortably host one hive. Community gardens and church grounds can often host two. Larger properties, farms, and rural sites can host more if forage and access permit. We walk the property with you before installation to confirm the fit.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What's the commitment? Can I back out?</summary>
+      <div class="faq-body">
+        <p>
+          We ask hosts to commit to a full season at minimum, because that's what the bees need to establish. Starting a colony in May and pulling it out in July is hard on the bees and doesn't give the host a real experience of what hosting feels like. After a full season, you can end the arrangement with reasonable notice and we'll relocate the colony to another site.
+        </p>
+        <p>
+          If you're uncertain and want to start small, our one-season tier covers installation through October and then we relocate. If you know you want bees long-term, our multi-year partner tiers lock in lower rates in exchange for the commitment. Both the bees and your wallet benefit from continuity, but we're not going to pressure you into a year-round arrangement if a one-season trial is what makes sense for you.
+        </p>
+        <a href="get-started.html" class="faq-body-link">See the tiers on Get Started</a>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="more-link-block">
+    Want the deeper version of these questions? <a href="education.html">Read the full Education page</a>
+  </div>
+
+  <hr class="rule">
+
+  <h2>What makes a good site</h2>
+
+  <p class="large">
+    We walk the property with you before anything is installed. It's a free conversation, no pressure, and it's how we both find out whether this is a fit. Here's what we're looking at when we come out.
+  </p>
+
+  <ul class="gets">
+    <li>At least six hours of direct sun where the hive will sit, ideally morning sun</li>
+    <li>A reliable water source within about 50 feet, or space to install a small bee-safe water station</li>
+    <li>Roughly 15 feet of setback from property lines and from the busiest foot-traffic areas of the yard</li>
+    <li>A flyway barrier near the entrance (a fence, hedge, or building wall), or room to install one</li>
+    <li>No broad-spectrum pesticide program on the property, by you or by any service you use</li>
+    <li>A willing host who genuinely wants the bees there for the full season, not someone being talked into it</li>
+  </ul>
+
+  <p>
+    If a site doesn't quite check all of these boxes but most of them, we'll tell you what would need to change, or whether there's a different spot on the property that works better. Sometimes the answer is a slightly different corner of the yard. Sometimes it's not the right fit and we say so. You don't pay for the property walk. We'd rather have the honest conversation early than install a hive somewhere that's going to struggle.
+  </p>
+
+  <hr class="rule">
+
+  <h2>How it works</h2>
+
+  <ol class="steps">
+    <li>
+      <strong>You tell us about your site</strong>
+      <span>Fill out the short form on the Get Started page. Takes about three minutes.</span>
+    </li>
+    <li>
+      <strong>We reach out within a week</strong>
+      <span>Carmen or Christopher will call or email to talk through your space and answer questions.</span>
+    </li>
+    <li>
+      <strong>We walk the property together</strong>
+      <span>Free site visit. We confirm it's a fit, answer your questions, meet whoever will be near the hive.</span>
+    </li>
+    <li>
+      <strong>We install and register the hive</strong>
+      <span>Swarm season peaks April through May. If it's a fit, we move quickly to place a colony.</span>
+    </li>
+    <li>
+      <strong>We manage. You enjoy.</strong>
+      <span>Regular inspections through the active season. Honey at harvest. Winter prep before the cold.</span>
+    </li>
+  </ol>
+
+  <div class="community">
+    <h3>A note on the community side</h3>
+    <p>Hosted hives help fund hives at community gardens and urban farms in neighborhoods that need them most. One hosted hive on a private property helps pay for hives at the gardens growing food for people who need it. That's the model. When you host, you're not just getting bees. You're helping put bees where they do the most good.</p>
+  </div>
+
+  <!-- Final CTA - the whole page funnels here -->
+  <div class="final-cta">
+    <h2>Ready?</h2>
+    <p>See the pricing and tell us about your site. We'll take it from there.</p>
+    <div class="final-cta-actions">
+      <a href="get-started.html" class="cta">Get Started</a>
+      <a href="education.html" class="cta-secondary">Keep Reading</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Buzz and Blooms <span class="hex-mark"></span> Chattanooga, TN</p>
+    <p>Rescued bees <span class="hex-mark"></span> Local gardens <span class="hex-mark"></span> Neighborhood honey</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
